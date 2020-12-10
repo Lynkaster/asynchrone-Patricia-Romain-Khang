@@ -1,43 +1,32 @@
 <?php
-    $login = "";
-    $mdp = "toto8Rrr";
 
+$donneestableau = [
+    ['./photos/Aladdin.png','roi-des-voleurs','aladdin',28],
+    ['./photos/Aladdin.png','roi-des-voleurs','aladdin',28],
+    ['./photos/Aladdin.png','roi-des-voleurs','aladdin',28],
+    ['./photos/Aladdin.png','roi-des-voleurs','aladdin',28]
+];
 
+function displayTable(array $arr): void
+{
+    echo '<table>';
+    echo '<tr>';
+        echo '<td>photo</td>';
+        echo '<td>Nom</td>';
+        echo '<td>Prénom</td>';
+        echo '<td>age</td>';
+    echo '<tr/>';
+    foreach ($arr as $value) {
+        echo '<tr>';
+            echo '<td><img src="' . $value[0] . '" alt="photo de ' . $value[2] . '</td>';
+            echo '<td>' . $value[1] . '</td>';
+            echo '<td>' . $value[2] . '</td>';
+            echo '<td>' . $value[3] . ' ans</td>';
+        echo '</tr>';
+    }
+    echo '</table>';
+}
 
-    function controleMDP(string $mdp)
-    {
-        $mdpValid = true;
-        if (strlen($mdp) < 8) {
-            echo "Mot de passe inférieur à 8 caractères\n";
-            $mdpValid = false;
-        } else {
-            $chaineC = str_split($mdp);
-            foreach ($chaineC as $value) {
-                if (ctype_upper($value)) {
-                    $mdpValid = TRUE;
-                    echo 'ya maj <br>';
-                  } else {
-                    if (ctype_lower($value)) {
-                        $mdpValid = true;
-                        echo 'ya min<br>';
-                      }
-                     else {
-                        if (ctype_digit($value)) {
-                            $mdpValid = true;
-                            echo 'ya chiffre<br>';
-                          }
-                          else{
-                              echo 'true';
-                              return TRUE;
-                          }
-                        }
-                    }
-                }
-            }
+displayTable($donneestableau);
 
-        }
-
-
-    controleMDP($mdp);
-
-    ?>
+?>
