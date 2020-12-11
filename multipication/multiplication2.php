@@ -3,64 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiplication2</title>
+    <title>La table de multiplication avec formulaire</title>
 </head>
 <body>
 
-
-<!--http://localhost/TP_PHP/getMultipication/multiplication.php?table=9&max=24-->
-
-
-<!--Transmettre données pour le GET-->
- <form action="multiplication.php" method="get">
-        <div>
-            <label for="table">Entrez la table de multiplication souhaitée : </label>
-            <input type="text" name="table">
-        </div>
-        <div>
-            <label for="max">Entrez le nombre max :</label>
-            <input type="text" name="max">
-        </div>
-        <div>
-            <input type="submit">
-        </div>       
-    </form>
-
-<BR><BR>
-
-<!--Appeler GET-->
 <?php
-
-$table = $_GET['table'];
-$max = $_GET['max'];
-
-
-function multiplication( int $table , int $max ): void
-{
-    $red = 'red';
-    for($base=0; $base<=$max; $base ++)
+    
+    if(!empty($_POST))
     {
-        $resultat = $table * $base;
-        if($resultat%2 == 1)//s'il reste rien au modulo c'est un chiffre pair et donc si non il est impair
+        if( !empty($_POST['table']) || !empty($_POST['max']))
         {
-            echo "$table x $base = $resultat<br>\n"; 
+            $lTable =  htmlspecialchars($_POST['table']);
+            $lMax = htmlspecialchars($_POST['max']);
+            $verifTable = false;
+            $verifMax = false;
+
+            if( is_numeric($lMax) )
+            {
+                $lMax = (int)($lMax);
+                $lMax = $lMax > 1000 ? 1000:$lMax;
+                echo gettype($lMax), "<BR>";
+                $verifMax = !$verifMax;
+            }
+            
+            if( is_numeric($lTable) )
+            {
+                $lTable = (int)($lTable);
+                echo gettype($lTable), "<BR>";
+                $verifTable = true;
+            }
+        
+            if( $verifMax && $verifTable )
+            {
+                echo "<BR>La table demandée est de celle de " . ($lTable) . "<BR>\n";
+                
+                for($i=0; $i<=$lMax ;$i++)
+                {
+                    $lCalcul = $lTable*$i;
+                    $lColor = "black";
+
+                    if($lCalcul % 2 == 0)
+                    {
+                        $lColor = "red";
+                    }
+                    echo "<span style='color:$lColor'> $lTable x $i = " . $lTable*$i . "</span><br>", PHP_EOL;
+                }
+            }
         }
-        else
-        {
-            echo "<span style='color:$red'> $table x $base =  $resultat</span><br>\n";
-        }
-    }
 }
-multiplication($table, $max);
 
 ?>
 
-
-
-
-
-
-
+<form action="multiplication2.php" method="post">
+    <label for="table">Quel chiffre à multiplier ?</label>
+    <input type="text" name="table">
+    <BR>
+    <label for="max">Jusqu'à quelle valeur ?</label>
+     <input type="text" name="max">
+    <BR>
+     <input type="submit">
+</form>
 
 </body>
 </html>
