@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GET_multiplication</title>
+    <title>Multiplication2</title>
 </head>
 <body>
 
@@ -59,40 +59,7 @@ multiplication($table, $max);
 
 
 
-Code alexandre Ahmad :
-<?php
-    
-    $lTable =  $_GET['table'];
-    $lMax = $_GET['max'];
-        
-    
-    
-    echo "La table demandée est de celle de " . ($lTable) . "<BR>\n";
-        
-        for($i=0; $i<=$lMax ;$i++)
-        {
-            $lCalcul = $lTable*$i;
-            $lColor = "black";
 
-            if($lCalcul % 2 == 0)
-            {
-                $lColor = "red";
-            }
-            echo "<span style='color:$lColor'> $lTable x $i = " . $lTable*$i . "</span><br>", PHP_EOL;
-        }
-
-
-?>
-
-<form action="mult.php" method="get">
-    <label for="table">Quel chiffre à multiplier ?</label>
-    <input type="text" name="table">
-    <BR>
-    <label for="max">Jusqu'à quelle valeur ?</label>
-     <input type="text" name="max">
-    <BR>
-     <input type="submit">
-</form>
 
 
 </body>
