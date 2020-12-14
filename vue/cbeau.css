@@ -1,0 +1,128 @@
+body {
+    background-image: url("./disneybg.jpg");
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchBar {
+    text-align: center;
+    background-color: white;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 30px;
+}
+
+.list {
+    width: 90em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.list h2 {
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 0.1em;
+}
+
+.list h3 {
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 0.5em;
+}
+
+.returnSearch {
+    display: flex;
+    align-items: center;
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.result a {
+    border: solid grey 2px;
+    border-radius: 10px;
+    background-color: white;
+    margin: 1em;
+    text-decoration: none;
+    color: black;
+}
+
+.result a:hover {
+    border: solid 2px blue;
+    border-radius: 10px;
+    background-color: lightblue;
+}
+
+.returnHome {
+    background-color: white;
+    border-radius: 30px;
+    width: max-content;
+    padding: 0.5em;
+    display: flex;
+    align-self: center;
+}
+
+.card {
+    width: 8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.card img {
+    margin: auto;
+    border-radius: 5px;
+    width: 120px;
+    height: 140px;
+    border: solid 1px grey;
+}
+
+.pagePerso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardPersonnage {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 1em;
+    border: solid 1px black;
+    border-radius: 5px;
+    width: 35em;
+}
+
+.return {
+    display: flex;
+    align-self: flex-end;
+    border: solid white 1px;
+}
+
+.return:hover {
+    border: solid 1px lightblue;
+}
+
+.cardPersonnage .imagePerso {
+    width: 240px;
+    height: 280px;
+    margin-right: 1em;
+    border-radius: 5px;
+    border: solid 1px grey;
+}
+
+.cardPersonnage .infos {
+    display: flex;
+    flex-direction: column;
+}
