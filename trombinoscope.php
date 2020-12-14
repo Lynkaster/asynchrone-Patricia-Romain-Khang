@@ -1,7 +1,6 @@
 <?php
 
 $donneestableau = [
-    0 => ['./photos/ursula.jpg', 'Pieuvre', 'Ursula', 60, 'Personnage du dessin animé : La Petite sirène'],
     1 => ['./photos/aladdin.png', 'RoiDesVoleurs', 'Aladdin', 22, 'Personnage du dessin animé : Aladdin'],
     2 => ['./photos/anna.JPG', 'Neige', 'Anna', 16, 'Personnage du dessin animé : La Reine des neiges'],
     3 => ['./photos/ariel.jpg', 'Sirène', 'Ariel', 16, 'Personnage du dessin animé : La Petite sirène'],
@@ -27,6 +26,7 @@ $donneestableau = [
     23 => ['./photos/prince_charmant.png', 'Prince', 'Chanmant', 18, 'Personnage du dessin animé : Cendrillon'],
     24 => ['./photos/reine_enfer.jpg', 'Reine', 'Enfer', 50, 'Personnage du dessin animé : Blanche Neige'],
     25 => ['./photos/thomas_o_malley.jpg', 'O\'Maley', 'Thomas', 5, 'Personnage du dessin animé : Les Aristochats'],
+    26 => ['./photos/ursula.jpg', 'Pieuvre', 'Ursula', 60, 'Personnage du dessin animé : La Petite sirène']
 ];
 if (!empty($_GET['q'])) $query = $_GET['q'];
 if (!empty($_GET['id'])) $id = $_GET['id'];
@@ -45,7 +45,7 @@ $personnageResult = [];
     <title>Trombinoscope</title>
     <style>
         body {
-            background-image: url('./disneybg.jpg');
+            background-image: url("./disneybg.jpg");
             background-attachment: fixed;
             display: flex;
             flex-direction: column;
@@ -176,6 +176,7 @@ $personnageResult = [];
 </head>
 
 <body>
+
 <!--liste par défaut-->
     <?php
     if (empty($id) && empty($query)) {
@@ -209,6 +210,7 @@ $personnageResult = [];
     } elseif (!empty($query)) {
     ?>
 <!--page résultat de la recherche-->
+
         <div class="searchBar">
             <form action="trombinoscope.php" value="<?= $query ?>">
                 <label for="table">rechercher un personnage :</label>
@@ -297,6 +299,7 @@ $personnageResult = [];
     <?php
     }
     ?>
+
 </body>
 
 </html>
