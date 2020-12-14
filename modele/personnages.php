@@ -30,7 +30,7 @@
         20 => ['./photos/pinocchio.jpg', 'Bois', 'Pinocchio', 5, 'Personnage du dessin animé : Pinocchio'],
         21 => ['./photos/pluto.png', 'Chien', 'Pluto', 3, 'Personnage des dessins animés :Mickey Mouse et Donald Duck '],
         22 => ['./photos/pocahontas.jpg', 'LégendeIndienne', 'Pocahontas', 17, 'Personnage du dessin animé : Pocahontas'],
-        23 => ['./photos/prince_charmant.png', 'Prince', 'Chanmant', 18, 'Personnage du dessin animé : Cendrillon'],
+        23 => ['./photos/prince_charmant.png', 'Prince', 'Charmant', 18, 'Personnage du dessin animé : Cendrillon'],
         24 => ['./photos/reine_enfer.jpg', 'Reine', 'Enfer', 50, 'Personnage du dessin animé : Blanche Neige'],
         25 => ['./photos/thomas_o_malley.jpg', 'O\'Maley', 'Thomas', 5, 'Personnage du dessin animé : Les Aristochats'],
         26 => ['./photos/ursula.jpg', 'Pieuvre', 'Ursula', 60, 'Personnage du dessin animé : La Petite sirène']
